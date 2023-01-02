@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/0x3zra/mongoose-simple-pager/issues"
   },
-  "publishConfig": {
-    "@BielefeldJ:registry": "https://npm.pkg.github.com"
-  },
   "homepage": "https://github.com/0x3zra/mongoose-simple-pager#readme"
 }

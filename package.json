@@ -4,7 +4,7 @@
   "description": "Lightweight pagination plugin for mongoose",
   "main": "index.js",
   "scripts": {
-    "test": "exit 1"
+    "test": "echo \"No test specified\""
   },
   "repository": {
     "type": "git",

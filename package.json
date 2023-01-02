@@ -1,5 +1,5 @@
 {
-  "name": "mongoose-pager",
+  "name": "mongoose-simple-pager",
   "version": "1.0.0",
   "description": "Lightweight pagination plugin for mongoose",
   "main": "index.js",
@@ -8,16 +8,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/0x3zra/mongoose-pager.git"
+    "url": "git://github.com/0x3zra/mongoose-simple-pager.git"
   },
   "keywords": ["nodejs", "mongoose", "mongo", "paginate", "pagination"],
   "author": "Ezra",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/0x3zra/mongoose-pager/issues"
+    "url": "https://github.com/0x3zra/mongoose-simple-pager/issues"
   },
   "publishConfig": {
     "@BielefeldJ:registry": "https://npm.pkg.github.com"
   },
-  "homepage": "https://github.com/0x3zra/mongoose-pager#readme"
+  "homepage": "https://github.com/0x3zra/mongoose-simple-pager#readme"
 }

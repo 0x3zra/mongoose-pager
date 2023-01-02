@@ -1,5 +1,5 @@
 const paginate = (schema) => {
-	schema.statics.paginate = async function paginateFunc(options, populate, query) {
+	schema.statics.paginate = async function paginateFunc(options, populate, query = undefined) {
 		const sortBy = options.sortBy ? options.sortBy : 'createdAt';
 		const sortDirection = options.sortDirection && options.sortDirection === 'asc' ? 'asc' : 'desc';
 		const page = options.page && parseInt(options.page, 10) > 0 ? parseInt(options.page, 10) : 1;

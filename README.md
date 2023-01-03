@@ -49,14 +49,14 @@ userSchema.plugin(paginate);
 const User = mongoose.model("userModel");
 
 const options = {
-	limit: 5,
-	page: 1
-}
+  limit: 5,
+  page: 1,
+};
 
 return await User.paginate(options);
 ```
 
-Output will be:
+### Output will be:
 
 ```json
 {
@@ -83,6 +83,29 @@ Output will be:
 }
 ```
 
+### Adding a query and populate options
+
+```javascript
+const User = mongoose.model("userModel");
+
+const options = {
+  limit: 5,
+  page: 1,
+};
+
+const query = {
+  $or: [
+    {
+      userName: {
+        $regex: "x",
+        $options: "i",
+      },
+    },
+  ],
+};
+
+return await User.paginate(options, "roles", query);
+```
 
 ## Contributing
 
@@ -91,7 +114,6 @@ Output will be:
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
-
 
 ## License
 

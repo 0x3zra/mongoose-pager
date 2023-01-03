@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/mongoose-simple-pager.png)](https://badge.fury.io/js/mongoose-simple-pager)
+
 # mongoose-simple-pager
 
 Pagination plugin for [mongoose.js](http://mongoosejs.com/).

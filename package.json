@@ -22,5 +22,11 @@
   "bugs": {
     "url": "https://github.com/0x3zra/mongoose-simple-pager/issues"
   },
-  "homepage": "https://github.com/0x3zra/mongoose-simple-pager#readme"
+  "homepage": "https://github.com/0x3zra/mongoose-simple-pager#readme",
+  "devDependencies": {
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.1"
+  }
 }

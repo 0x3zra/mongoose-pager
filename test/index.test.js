@@ -47,7 +47,7 @@ describe('Pagination & Population', () => {
 });
 
 describe('Pagination & Population & Query', () => {
-	it('Should retrieve users with pagination data and population', async () => {
+	it('Should retrieve users with pagination data, population and find query', async () => {
 		const createdUser = await User.paginate({}, 'roles', {
 			email: {
 				$regex: 'kashier',
@@ -59,6 +59,50 @@ describe('Pagination & Population & Query', () => {
 
 		expect(createdUser.page).toBeGreaterThan(0);
 		expect(createdUser.limit).toBeGreaterThan(0);
+
+		expect(createdUser.results[0].roles).toBeDefined();
+		expect(createdUser.results[0].roles.length).toBeGreaterThan(0);
+	});
+});
+
+describe('Pagination & Population & Query ', () => {
+	it('Should retrieve users with pagination data, population, find query and descending sorting', async () => {
+		const createdUser = await User.paginate({ sortDirection: 'desc', sortBy: 'name' }, 'roles', {
+			email: {
+				$regex: 'kashier',
+				$options: 'i'
+			}
+		});
+
+		console.log(createdUser);
+		expect(createdUser.totalResults).toBeGreaterThan(0);
+
+		expect(createdUser.page).toBeGreaterThan(0);
+		expect(createdUser.limit).toBeGreaterThan(0);
+
+		expect(createdUser.results[0].roles).toBeDefined();
+		expect(createdUser.results[0].roles.length).toBeGreaterThan(0);
+	});
+});
+
+describe('Pagination with options & Population & Query ', () => {
+	it('Should retrieve users with pagination data, population, find query and pagination data', async () => {
+		const createdUser = await User.paginate({ page: 1, limit: 2 }, 'roles', {
+			email: {
+				$regex: 'kashier',
+				$options: 'i'
+			}
+		});
+
+		const usersCount = User.count();
+
+		console.log(usersCount);
+		expect(createdUser.totalResults).toBeGreaterThan(0);
+
+		expect(createdUser.page).toBeGreaterThan(0);
+		expect(createdUser.limit).toBeGreaterThan(0);
+
+		expect(createdUser.results.length).toBe(2);
 
 		expect(createdUser.results[0].roles).toBeDefined();
 		expect(createdUser.results[0].roles.length).toBeGreaterThan(0);

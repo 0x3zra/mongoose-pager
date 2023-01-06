@@ -5,7 +5,7 @@
   "description": "Lightweight pagination plugin for mongoose",
   "main": "index.js",
   "scripts": {
-    "test": "jest --runInBand --detectOpenHandles"
+    "test": "jest --runInBand --detectOpenHandles --coverage && coveralls < coverage/lcov.info"
   },
   "jest": {
     "testEnvironment": "node"
@@ -32,6 +32,7 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-typescript": "^7.18.6",
     "babel-jest": "^29.3.1",
+    "coveralls": "^3.1.1",
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",

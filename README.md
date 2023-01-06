@@ -1,4 +1,4 @@
-[![npm version](https://badge.fury.io/js/mongoose-simple-pager.png)](https://badge.fury.io/js/mongoose-simple-pager)
+[![npm version](https://badge.fury.io/js/mongoose-simple-pager@2x.png)](https://badge.fury.io/js/mongoose-simple-pager)
 
 # mongoose-simple-pager
 

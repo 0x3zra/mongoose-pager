@@ -109,6 +109,10 @@ const query = {
 return await User.paginate(options, "roles", query);
 ```
 
+## Todo
+* Accept aggregate queries
+* Migrate to typescript
+
 ## Contributing
 
 1. Fork it ( https://github.com/0x3zra/mongoose-simple-pager/fork )

@@ -1,9 +1,9 @@
 const paginate = (schema) => {
 	schema.statics.paginate = async function paginateFunc(options, populate, query = undefined) {
-		const sortBy = options.sortBy ? options.sortBy : 'createdAt';
-		const sortDirection = options.sortDirection && options.sortDirection === 'asc' ? 'asc' : 'desc';
-		const page = options.page && parseInt(options.page, 10) > 0 ? parseInt(options.page, 10) : 1;
-		const limit = options.limit && parseInt(options.limit, 10) > 0 ? parseInt(options.limit, 10) : 25;
+		const sortBy = options?.sortBy ? options?.sortBy : 'createdAt';
+		const sortDirection = options?.sortDirection && options?.sortDirection === 'asc' ? 'asc' : 'desc';
+		const page = options?.page && parseInt(options?.page, 10) > 0 ? parseInt(options?.page, 10) : 1;
+		const limit = options?.limit && parseInt(options?.limit, 10) > 0 ? parseInt(options?.limit, 10) : 25;
 		const skip = (page - 1) * limit;
 
 		const countPromise = this.countDocuments(query).exec();
@@ -33,4 +33,4 @@ const paginate = (schema) => {
 	};
 };
 
-module.exports = paginate;
+export default paginate;

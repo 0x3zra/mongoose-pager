@@ -5,7 +5,7 @@
   "description": "Lightweight pagination plugin for mongoose",
   "main": "index.js",
   "scripts": {
-    "test": "jest --runInBand --detectOpenHandles --coverage && coveralls < coverage/lcov.info"
+    "test": "jest --runInBand --detectOpenHandles --coverage"
   },
   "jest": {
     "testEnvironment": "node"

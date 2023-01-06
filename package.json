@@ -1,10 +1,14 @@
 {
   "name": "mongoose-simple-pager",
   "version": "1.0.3",
+  "type": "module",
   "description": "Lightweight pagination plugin for mongoose",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"No test specified\""
+    "test": "jest --runInBand --detectOpenHandles"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "repository": {
     "type": "git",
@@ -24,11 +28,16 @@
   },
   "homepage": "https://github.com/0x3zra/mongoose-simple-pager#readme",
   "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-typescript": "^7.18.6",
+    "babel-jest": "^29.3.1",
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "jest": "^29.3.1",
     "mongodb-memory-server": "^8.10.2",
+    "mongoose": "^6.8.2",
     "prettier": "^2.8.1"
   }
 }

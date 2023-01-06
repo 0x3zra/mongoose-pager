@@ -28,7 +28,9 @@ const paginate = (schema) => {
 
 		return {
 			results,
-			totalResults
+			totalResults,
+			page: page,
+			limit: limit <= totalResults ? limit : totalResults
 		};
 	};
 };

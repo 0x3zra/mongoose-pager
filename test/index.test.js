@@ -24,7 +24,7 @@ describe('Initial DB', () => {
 
 describe('Pagination', () => {
 	it('Should retrieve users with pagination data', async () => {
-		const createdUser = await User.paginate({}, 'roles');
+		const createdUser = await User.paginate({}, 'roles.description');
 
 		expect(createdUser.totalResults).toBeDefined();
 		expect(createdUser.page).toBeGreaterThan(0);
@@ -34,7 +34,7 @@ describe('Pagination', () => {
 
 describe('Pagination & Population', () => {
 	it('Should retrieve users with pagination data and population', async () => {
-		const createdUser = await User.paginate({}, 'roles');
+		const createdUser = await User.paginate({}, 'roles.description');
 
 		expect(createdUser.totalResults).toBeGreaterThan(0);
 
@@ -48,7 +48,7 @@ describe('Pagination & Population', () => {
 
 describe('Pagination & Population & Query', () => {
 	it('Should retrieve users with pagination data, population and find query', async () => {
-		const createdUser = await User.paginate({}, 'roles', {
+		const createdUser = await User.paginate({}, 'roles.description', {
 			email: {
 				$regex: 'kashier',
 				$options: 'i'
@@ -87,16 +87,13 @@ describe('Pagination & Population & Query ', () => {
 
 describe('Pagination with options & Population & Query ', () => {
 	it('Should retrieve users with pagination data, population, find query and pagination data', async () => {
-		const createdUser = await User.paginate({ page: 1, limit: 2 }, 'roles', {
+		const createdUser = await User.paginate({ page: 1, limit: 2 }, 'roles.description', {
 			email: {
 				$regex: 'kashier',
 				$options: 'i'
 			}
 		});
 
-		const usersCount = User.count();
-
-		console.log(usersCount);
 		expect(createdUser.totalResults).toBeGreaterThan(0);
 
 		expect(createdUser.page).toBeGreaterThan(0);

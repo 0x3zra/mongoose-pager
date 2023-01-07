@@ -1,4 +1,5 @@
-[![npm version](https://badge.fury.io/js/mongoose-simple-pager@2x.png)](https://badge.fury.io/js/mongoose-simple-pager)
+[![npm version](https://badge.fury.io/js/mongoose-simple-pager.png)](https://badge.fury.io/js/mongoose-simple-pager)
+[![Coverage Status](https://coveralls.io/repos/github/0x3zra/mongoose-simple-pager/badge.svg?branch=master)](https://coveralls.io/github/0x3zra/mongoose-simple-pager?branch=master)
 
 # mongoose-simple-pager
 

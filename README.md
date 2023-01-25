@@ -1,6 +1,6 @@
 [![npm version](https://badge.fury.io/js/mongoose-simple-pager.png)](https://badge.fury.io/js/mongoose-simple-pager)
-[![Coverage Status](https://coveralls.io/repos/github/0x3zra/mongoose-simple-pager/badge.svg?branch=master)](https://coveralls.io/github/0x3zra/mongoose-simple-pager?branch=master)
-![CI](https://img.shields.io/github/actions/workflow/status/0x3zra/mongoose-simple-pager/node.js.yml) 
+[![Coverage Status](https://coveralls.io/repos/github/3zrv/mongoose-simple-pager/badge.svg?branch=master)](https://coveralls.io/github/3zrv/mongoose-simple-pager?branch=master)
+![CI](https://img.shields.io/github/actions/workflow/status/0x3zra/mongoose-simple-pager/node.js.yml)
 # mongoose-simple-pager
 
 Pagination plugin for [mongoose.js](http://mongoosejs.com/).

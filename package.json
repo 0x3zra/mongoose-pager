@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/0x3zra/mongoose-simple-pager.git"
+    "url": "git://github.com/3zrv/mongoose-simple-pager.git"
   },
   "keywords": [
     "nodejs",
@@ -24,9 +24,9 @@
   "author": "Ezra",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/0x3zra/mongoose-simple-pager/issues"
+    "url": "https://github.com/3zrv/mongoose-simple-pager/issues"
   },
-  "homepage": "https://github.com/0x3zra/mongoose-simple-pager#readme",
+  "homepage": "https://github.com/3zrv/mongoose-simple-pager#readme",
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",

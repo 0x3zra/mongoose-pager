@@ -35,4 +35,4 @@ const paginate = (schema) => {
 	};
 };
 
-export default paginate;
+module.exports = paginate;

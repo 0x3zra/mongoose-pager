@@ -1,36 +1,36 @@
 const paginate = (schema) => {
-	schema.statics.paginate = async function paginateFunc(options, populate, query = undefined) {
-		const sortBy = options.sortBy ? options.sortBy : 'createdAt';
-		const sortDirection = options.sortDirection && options.sortDirection === 'asc' ? 'asc' : 'desc';
-		const page = options.page && parseInt(options.page, 10) > 0 ? parseInt(options.page, 10) : 1;
-		const limit = options.limit && parseInt(options.limit, 10) > 0 ? parseInt(options.limit, 10) : 25;
+	schema.statics.paginate = async function (options, populate = '', query = {}) {
+		const { sortBy = 'createdAt', sortDirection = 'desc', page = 1, limit = 25 } = options;
 		const skip = (page - 1) * limit;
 
-		const countPromise = this.countDocuments(query).exec();
-		let docsPromise = this.find(query)
+		let docsQuery = this.find(query)
 			.sort({ [sortBy]: sortDirection })
 			.skip(skip)
 			.limit(limit);
 		if (populate) {
-			populate.split(' ').forEach((populate) => {
-				docsPromise = docsPromise.populate(
-					populate
+			populate.split(' ').forEach((path) => {
+				docsQuery = docsQuery.populate(
+					path
 						.split('.')
 						.reverse()
 						.reduce((a, b) => ({ path: b, populate: a }))
 				);
 			});
 		}
-
-		docsPromise = docsPromise.exec();
-
-		const [totalResults, results] = await Promise.all([countPromise, docsPromise]);
-
+		const totalResultsPromise = this.countDocuments(query).exec();
+		const resultsPromise = docsQuery.lean().exec();
+		const [totalResults, rawResults] = await Promise.all([totalResultsPromise, resultsPromise]);
+		const results = rawResults.map((doc) => {
+			delete doc.activePaths;
+			delete doc.skipId;
+			return doc;
+		});
 		return {
 			results,
 			totalResults,
-			page: page,
-			limit: limit <= totalResults ? limit : totalResults
+			page,
+			limit: Math.min(limit, totalResults),
+			lastPage: Math.ceil(totalResults / limit)
 		};
 	};
 };
